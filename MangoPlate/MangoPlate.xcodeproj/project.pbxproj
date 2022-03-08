@@ -48,6 +48,11 @@
 		A936348D27C8CC990008A09B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A936344827C8CBA00008A09B /* libsqlite3.tbd */; };
 		A936348E27C8CC9E0008A09B /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A936344727C8CB9A0008A09B /* libxml2.tbd */; };
 		A936348F27C8CCA30008A09B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A936344627C8CB920008A09B /* libc++.tbd */; };
+		A949D3C827D5D0A600B90F56 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949D3C727D5D0A600B90F56 /* MainViewController.swift */; };
+		A949D3D527D74A5D00B90F56 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949D3D327D74A5D00B90F56 /* MainCollectionViewCell.swift */; };
+		A949D3D627D74A5D00B90F56 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A949D3D427D74A5D00B90F56 /* MainCollectionViewCell.xib */; };
+		A949D3DA27D74A7B00B90F56 /* MangoPickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A949D3D827D74A7B00B90F56 /* MangoPickCollectionViewCell.swift */; };
+		A949D3DB27D74A7B00B90F56 /* MangoPickCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A949D3D927D74A7B00B90F56 /* MangoPickCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +108,11 @@
 		A936346E27C8CBA90008A09B /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		A936346F27C8CBA90008A09B /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		A936348C27C8CBD30008A09B /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		A949D3C727D5D0A600B90F56 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A949D3D327D74A5D00B90F56 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		A949D3D427D74A5D00B90F56 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		A949D3D827D74A7B00B90F56 /* MangoPickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangoPickCollectionViewCell.swift; sourceTree = "<group>"; };
+		A949D3D927D74A7B00B90F56 /* MangoPickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MangoPickCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +158,9 @@
 				A936342927C8C9730008A09B /* AppDelegate.swift */,
 				A936342B27C8C9730008A09B /* SceneDelegate.swift */,
 				A936342F27C8C9730008A09B /* Main.storyboard */,
+				A949D3C927D5D0B300B90F56 /* Main */,
 				A949D3C627D5CBE500B90F56 /* Map */,
+				A949D3D727D74A6600B90F56 /* MangoPick */,
 				A936343227C8C9730008A09B /* Assets.xcassets */,
 				A936343427C8C9730008A09B /* LaunchScreen.storyboard */,
 				A936343727C8C9730008A09B /* Info.plist */,
@@ -238,6 +250,25 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		A949D3C927D5D0B300B90F56 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A949D3C727D5D0A600B90F56 /* MainViewController.swift */,
+				A949D3D327D74A5D00B90F56 /* MainCollectionViewCell.swift */,
+				A949D3D427D74A5D00B90F56 /* MainCollectionViewCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A949D3D727D74A6600B90F56 /* MangoPick */ = {
+			isa = PBXGroup;
+			children = (
+				A949D3D827D74A7B00B90F56 /* MangoPickCollectionViewCell.swift */,
+				A949D3D927D74A7B00B90F56 /* MangoPickCollectionViewCell.xib */,
+			);
+			path = MangoPick;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,10 +343,12 @@
 				A936347D27C8CBA90008A09B /* map_present_tracking.png in Resources */,
 				A936347427C8CBA90008A09B /* detail_button.png in Resources */,
 				A936348727C8CBA90008A09B /* noimage.png in Resources */,
+				A949D3DB27D74A7B00B90F56 /* MangoPickCollectionViewCell.xib in Resources */,
 				A936347927C8CBA90008A09B /* th_line.png in Resources */,
 				A936348227C8CBA90008A09B /* info_box_tail.png in Resources */,
 				A936347127C8CBA90008A09B /* map_pin_custom.png in Resources */,
 				A936348127C8CBA90008A09B /* map_pinup_custom.png in Resources */,
+				A949D3D627D74A5D00B90F56 /* MainCollectionViewCell.xib in Resources */,
 				A936347627C8CBA90008A09B /* map_pinup@3x.png in Resources */,
 				A936348027C8CBA90008A09B /* point_sprite.png in Resources */,
 				A936348827C8CBA90008A09B /* map_present_background_update.png in Resources */,
@@ -338,7 +371,10 @@
 			files = (
 				A936342E27C8C9730008A09B /* MapViewController.swift in Sources */,
 				A936342A27C8C9730008A09B /* AppDelegate.swift in Sources */,
+				A949D3DA27D74A7B00B90F56 /* MangoPickCollectionViewCell.swift in Sources */,
+				A949D3D527D74A5D00B90F56 /* MainCollectionViewCell.swift in Sources */,
 				A936342C27C8C9730008A09B /* SceneDelegate.swift in Sources */,
+				A949D3C827D5D0A600B90F56 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
