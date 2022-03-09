@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  KaKaoMapTest
+//  MangoPlate
 //
-//  Created by 김영인 on 2022/02/25.
+//  Created by 김영인 on 2022/03/09.
 //
 
 import UIKit
