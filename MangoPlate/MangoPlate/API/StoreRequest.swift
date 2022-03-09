@@ -10,7 +10,11 @@ import Alamofire
 
 class StoreRequest {
     
-    func getStoreInfo() {
+    // 탈출 클로저 @escaping 사용하여 데이터 받을 때까지 기다려야 함
+    // WHY? Alamofire는 비동기적으로 동작하기 때문
+    static func getStoreInfo( completion: @escaping ([Document]) -> Void) {
+        
+        var storeStorage: [Document]?
         
         let headers: HTTPHeaders = [
             "Authorization": "KakaoAK 51302fbcfac8fa678e74120eda31af22"
@@ -32,9 +36,11 @@ class StoreRequest {
             .responseDecodable(of: StoreInfo.self) { response in
                 
                 switch response.result {
-                    
+                    /Users/0inn/CloneProjects/MangoPlate/MangoPlate/MangoPlate/API/StoreRequest.swift
                 case .success(let response):
-                    print("DEBUG>> RESPONSE \(response)")
+                    //print("DEBUG>> 성공 \(String(describing: response.documents))")
+                    storeStorage = response.documents
+                    completion(storeStorage!)
                     
                 case .failure(let error):
                     print("DEBUG>> ERROR: \(error.localizedDescription)")
