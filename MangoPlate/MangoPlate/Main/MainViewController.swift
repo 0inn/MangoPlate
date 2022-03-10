@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
     var mainModel: [Document]?
+    var mainImgModel: [ImgDocument]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,20 @@ class MainViewController: UIViewController {
     // API 호출해서 데이터 받아온 후에 UI 그리기
     private func getAPI() {
         StoreRequest.getStoreInfo { (mainModel) in
-            self.mainModel = mainModel
+            self.mainModel = mainModel!
             self.collectionView.reloadData()
+            self.getImgAPI()
+        }
+    }
+    
+    private func getImgAPI() {
+        print("count \(mainModel?.count)")
+        for i in 0 ... (mainModel!.count - 1) {
+            ImageRequest.getImgInfo(mainModel?[i].place_name) { (mainImgModel) in
+                self.mainImgModel = mainImgModel
+                print("\(self.mainModel?[i].place_name)")
+                print("\(mainImgModel)")
+            }
         }
     }
     
@@ -74,9 +87,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize() }
-            let numberOfCells: CGFloat = 2
-            let width = collectionView.frame.size.width - (flowLayout.minimumInteritemSpacing * (numberOfCells - 1))
-            return CGSize(width: width/(numberOfCells), height: width/(numberOfCells) + 100)
-        }
+        guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize() }
+        let numberOfCells: CGFloat = 2
+        let width = collectionView.frame.size.width - (flowLayout.minimumInteritemSpacing * (numberOfCells - 1))
+        return CGSize(width: width/(numberOfCells), height: width/(numberOfCells) + 100)
+    }
 }

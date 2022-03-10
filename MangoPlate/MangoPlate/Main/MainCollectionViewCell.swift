@@ -24,5 +24,11 @@ class MainCollectionViewCell: UICollectionViewCell {
         let distStr = String(format: "%.2f", dist)
         storeDist.text = "부천시 \(distStr) km"
     }
+    
+    public func setImg( _ data: String) {
+        let url = URL(string: data)
+        let data = try? Data(contentsOf: url!)
+        storeImg.image = UIImage(data: data!)
+    }
 
 }
