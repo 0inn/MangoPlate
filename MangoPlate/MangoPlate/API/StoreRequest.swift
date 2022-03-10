@@ -40,7 +40,6 @@ class StoreRequest {
                 case .success(let response):
                     storeStorage = response.documents
                     completion(storeStorage)
-                    print(#function)
                     
                 case .failure(let error):
                     print("DEBUG>> ERROR: \(error.localizedDescription)")

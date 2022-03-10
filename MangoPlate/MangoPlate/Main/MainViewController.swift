@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
     var mainModel: [Document]?
-    var mainImgModel: [ImgDocument]?
+    var mainDic: [String: String] = [:] // 가게이름: 썸네일이미지
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,22 +48,20 @@ class MainViewController: UIViewController {
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
     }
     
-    // API 호출해서 데이터 받아온 후에 UI 그리기
+    // 가게 정보 API 받아오기
     private func getAPI() {
         StoreRequest.getStoreInfo { (mainModel) in
             self.mainModel = mainModel!
-            self.collectionView.reloadData()
             self.getImgAPI()
         }
     }
     
+    // 이미지 API 받아오기
     private func getImgAPI() {
-        print("count \(mainModel?.count)")
         for i in 0 ... (mainModel!.count - 1) {
-            ImageRequest.getImgInfo(mainModel?[i].place_name) { (mainImgModel) in
-                self.mainImgModel = mainImgModel
-                print("\(self.mainModel?[i].place_name)")
-                print("\(mainImgModel)")
+            ImageRequest.getImgInfo(imgName: mainModel![i].place_name!) { (mainImgModel) in
+                self.mainDic.updateValue(mainImgModel![0].thumbnail_url ?? "", forKey: self.mainModel![i].place_name!)
+                if i == (self.mainModel!.count - 1) { self.collectionView.reloadData() }   // reloadData()하는 시점 생각하기
             }
         }
     }
@@ -80,6 +78,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
         let cellData = mainModel![indexPath.row]
         cell.setData(cellData)
+        let cellImg = mainDic[cellData.place_name!]!
+        cell.setImg(cellImg)
         return cell
     }
     

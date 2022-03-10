@@ -7,10 +7,11 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class ImageRequest {
     
-    static func getImgInfo( _ imgName: String?, completion: @escaping ([ImgDocument]?) -> Void) {
+    static func getImgInfo(imgName: String?, completion: @escaping ([ImgDocument]?) -> Void) {
         
         var imgStorage: [ImgDocument]?
         
@@ -21,7 +22,7 @@ class ImageRequest {
         let url = "https://dapi.kakao.com/v2/search/image"
         
         let parameters: [String: Any] = [
-            "query": imgName,
+            "query": imgName ?? "",
             "size": 1
         ]
         
