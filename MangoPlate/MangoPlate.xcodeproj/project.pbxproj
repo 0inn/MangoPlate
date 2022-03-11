@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15EF8895A870C94FE548AE41 /* Pods_MangoPlate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38047A9C03A15B7186CA62F7 /* Pods_MangoPlate.framework */; };
 		A9460A3027D8B26000A16186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9460A2F27D8B26000A16186 /* AppDelegate.swift */; };
 		A9460A3227D8B26000A16186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9460A3127D8B26000A16186 /* SceneDelegate.swift */; };
 		A9460A3427D8B26000A16186 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9460A3327D8B26000A16186 /* MainViewController.swift */; };
@@ -25,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B112C1A842194A61613E6FF /* Pods-MangoPlate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangoPlate.debug.xcconfig"; path = "Target Support Files/Pods-MangoPlate/Pods-MangoPlate.debug.xcconfig"; sourceTree = "<group>"; };
+		38047A9C03A15B7186CA62F7 /* Pods_MangoPlate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangoPlate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FDAEFEDBC43C3B420EA70AE /* Pods-MangoPlate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangoPlate.release.xcconfig"; path = "Target Support Files/Pods-MangoPlate/Pods-MangoPlate.release.xcconfig"; sourceTree = "<group>"; };
 		A9460A2C27D8B26000A16186 /* MangoPlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangoPlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9460A2F27D8B26000A16186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9460A3127D8B26000A16186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,17 +53,28 @@
 				A9460A4527D8B27A00A16186 /* Alamofire in Frameworks */,
 				A9460A4B27D8B29300A16186 /* Then in Frameworks */,
 				A9460A4827D8B28700A16186 /* SnapKit in Frameworks */,
+				15EF8895A870C94FE548AE41 /* Pods_MangoPlate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4016CDCB0C965FA4F8E46CD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38047A9C03A15B7186CA62F7 /* Pods_MangoPlate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9460A2327D8B26000A16186 = {
 			isa = PBXGroup;
 			children = (
 				A9460A2E27D8B26000A16186 /* MangoPlate */,
 				A9460A2D27D8B26000A16186 /* Products */,
+				D8EAF14E6A275248E2DAD227 /* Pods */,
+				4016CDCB0C965FA4F8E46CD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +122,16 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		D8EAF14E6A275248E2DAD227 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B112C1A842194A61613E6FF /* Pods-MangoPlate.debug.xcconfig */,
+				7FDAEFEDBC43C3B420EA70AE /* Pods-MangoPlate.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9460A4027D8B26000A16186 /* Build configuration list for PBXNativeTarget "MangoPlate" */;
 			buildPhases = (
+				6499919FD72875A1B510EEAA /* [CP] Check Pods Manifest.lock */,
 				A9460A2827D8B26000A16186 /* Sources */,
 				A9460A2927D8B26000A16186 /* Frameworks */,
 				A9460A2A27D8B26000A16186 /* Resources */,
+				15CB0A690ED42F0089D164F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,7 +185,7 @@
 			mainGroup = A9460A2327D8B26000A16186;
 			packageReferences = (
 				A9460A4327D8B27A00A16186 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				A9460A4627D8B28700A16186 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A9460A4627D8B28700A16186 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
 				A9460A4927D8B29300A16186 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = A9460A2D27D8B26000A16186 /* Products */;
@@ -183,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15CB0A690ED42F0089D164F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MangoPlate/Pods-MangoPlate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MangoPlate/Pods-MangoPlate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MangoPlate/Pods-MangoPlate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6499919FD72875A1B510EEAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MangoPlate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9460A2827D8B26000A16186 /* Sources */ = {
@@ -340,6 +409,7 @@
 		};
 		A9460A4127D8B26000A16186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B112C1A842194A61613E6FF /* Pods-MangoPlate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -367,6 +437,7 @@
 		};
 		A9460A4227D8B26000A16186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDAEFEDBC43C3B420EA70AE /* Pods-MangoPlate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -424,7 +495,7 @@
 				kind = branch;
 			};
 		};
-		A9460A4627D8B28700A16186 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		A9460A4627D8B28700A16186 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -450,7 +521,7 @@
 		};
 		A9460A4727D8B28700A16186 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A9460A4627D8B28700A16186 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = A9460A4627D8B28700A16186 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
 			productName = SnapKit;
 		};
 		A9460A4A27D8B29300A16186 /* Then */ = {
