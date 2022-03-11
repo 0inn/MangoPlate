@@ -26,6 +26,14 @@ class MainCollectionViewCell: UICollectionViewCell {
     }
     
     public func setImg( _ data: String) {
+        // 이미지 큰 거 받아올 때, 멈춤 생길 수 있으므로 멀티 쓰레드로 작동하게 구현 -> 오히려 오래 걸림 ^^
+//        DispatchQueue.global().async {
+//            let url = URL(string: data)
+//            let data = try? Data(contentsOf: url!)
+//            DispatchQueue.main.async {
+//                self.storeImg.image = UIImage(data: data!)
+//            }
+//        }
         let url = URL(string: data)
         let data = try? Data(contentsOf: url!)
         storeImg.image = UIImage(data: data!)

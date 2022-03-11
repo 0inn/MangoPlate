@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bQY-ap-MC1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xWw-Cz-S9q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -126,6 +126,69 @@
             </objects>
             <point key="canvasLocation" x="267" y="850"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="xCM-4a-LP4">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xWw-Cz-S9q" customClass="LoginViewController" customModule="MangoPlate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fVd-xh-uuK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginImg" translatesAutoresizingMaskIntoConstraints="NO" id="ECF-gp-m8F">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-pL-WLf">
+                                <rect key="frame" x="103.5" y="418.5" width="207" height="59"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="KakaoImg"/>
+                                <connections>
+                                    <action selector="kakaoBtnClick:" destination="xWw-Cz-S9q" eventType="touchUpInside" id="d8z-om-XCL"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="망고플레이트" translatesAutoresizingMaskIntoConstraints="NO" id="Dut-M2-h26">
+                                <rect key="frame" x="57" y="181" width="300" height="175.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="AjV-ua-Led"/>
+                                    <constraint firstAttribute="width" secondItem="Dut-M2-h26" secondAttribute="height" multiplier="238:139" id="fS4-op-8tS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2XP-DZ-Glj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dut-M2-h26" firstAttribute="centerY" secondItem="fVd-xh-uuK" secondAttribute="centerY" multiplier="0.6" id="6HZ-k4-i29"/>
+                            <constraint firstItem="bo1-pL-WLf" firstAttribute="centerY" secondItem="fVd-xh-uuK" secondAttribute="centerY" id="CM4-jg-d0c"/>
+                            <constraint firstItem="ECF-gp-m8F" firstAttribute="leading" secondItem="2XP-DZ-Glj" secondAttribute="leading" id="PFI-zx-abs"/>
+                            <constraint firstItem="ECF-gp-m8F" firstAttribute="top" secondItem="fVd-xh-uuK" secondAttribute="top" id="Tfa-ow-C9A"/>
+                            <constraint firstAttribute="bottom" secondItem="ECF-gp-m8F" secondAttribute="bottom" id="Wui-4Q-yXs"/>
+                            <constraint firstItem="Dut-M2-h26" firstAttribute="centerX" secondItem="fVd-xh-uuK" secondAttribute="centerX" id="Yee-wF-9tE"/>
+                            <constraint firstItem="2XP-DZ-Glj" firstAttribute="trailing" secondItem="ECF-gp-m8F" secondAttribute="trailing" id="cBi-RM-sM5"/>
+                            <constraint firstItem="bo1-pL-WLf" firstAttribute="centerX" secondItem="fVd-xh-uuK" secondAttribute="centerX" id="ocP-RP-aGj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kakaoBtn" destination="bo1-pL-WLf" id="nmq-DY-JHF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qV3-mN-EMR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1900" y="1615"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="f2h-9o-BSC">
+            <objects>
+                <viewController id="sBW-vG-OpL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MLN-ND-JQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1dL-sf-pEx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXh-JU-Kem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1900" y="2328"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3GK-Cu-ibd">
             <objects>
@@ -199,11 +262,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="KakaoImg" width="183" height="45"/>
+        <image name="LoginImg" width="828" height="1792"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="signpost.right" catalog="system" width="128" height="118"/>
+        <image name="망고플레이트" width="476" height="278"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

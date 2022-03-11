@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // 카카오 로그인을 위한 네이티브 앱 키 작성
+        KakaoSDK.initSDK(appKey: "7fb44771b2166e16f6f425f0ba0f8048")
         return true
     }
 

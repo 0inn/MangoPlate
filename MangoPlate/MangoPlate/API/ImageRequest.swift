@@ -5,9 +5,7 @@
 //  Created by 김영인 on 2022/03/09.
 //
 
-import Foundation
 import Alamofire
-import UIKit
 
 class ImageRequest {
     
@@ -34,7 +32,7 @@ class ImageRequest {
                 
                 switch response.result {
                 case .success(let response):
-                    //print("DEBUG>> 성공 \(String(describing: response.documents))")
+                    print("📸 이미지 API 호출")
                     imgStorage = response.documents
                     completion(imgStorage!)
                     

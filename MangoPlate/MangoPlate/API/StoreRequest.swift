@@ -5,7 +5,6 @@
 //  Created by 김영인 on 2022/03/09.
 //
 
-import Foundation
 import Alamofire
 
 class StoreRequest {
@@ -38,6 +37,7 @@ class StoreRequest {
                 switch response.result {
                     
                 case .success(let response):
+                    print("🍚 식당 API 호출")
                     storeStorage = response.documents
                     completion(storeStorage)
                     
