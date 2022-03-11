@@ -74,7 +74,8 @@ extension LoginViewController {
     }
     
     private func presentVC() {
-        let vc = MainViewController()
+        // storyboard 사용할 땐, 아래와 같이 구현 필수
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
     }

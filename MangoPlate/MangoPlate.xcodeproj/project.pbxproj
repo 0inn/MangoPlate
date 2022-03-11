@@ -24,7 +24,7 @@
 		A9460A5D27D8F3B500A16186 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9460A5C27D8F3B500A16186 /* ImageResponse.swift */; };
 		A9C4586327DB0B5200E09C16 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4586227DB0B5200E09C16 /* LoginViewController.swift */; };
 		A9C4586E27DB1E0800E09C16 /* Pods_MangoPlate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38047A9C03A15B7186CA62F7 /* Pods_MangoPlate.framework */; };
-		A9C4587227DB21DB00E09C16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4587127DB21DB00E09C16 /* MapViewController.swift */; };
+		A9C4587727DB24CC00E09C16 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4587627DB24CC00E09C16 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		A9460A5A27D8F3AA00A16186 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		A9460A5C27D8F3B500A16186 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		A9C4586227DB0B5200E09C16 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A9C4587127DB21DB00E09C16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A9C4587627DB24CC00E09C16 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +110,7 @@
 		A9460A5027D8B9DE00A16186 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A9C4587627DB24CC00E09C16 /* MainTabBarController.swift */,
 				A9460A3327D8B26000A16186 /* MainViewController.swift */,
 				A9460A5627D8C12800A16186 /* MainCollectionViewCell.swift */,
 				A9460A5727D8C12800A16186 /* MainCollectionViewCell.xib */,
@@ -139,7 +140,6 @@
 		A9C4587327DB21DF00E09C16 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				A9C4587127DB21DB00E09C16 /* MapViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -281,8 +281,8 @@
 			files = (
 				A9C4586327DB0B5200E09C16 /* LoginViewController.swift in Sources */,
 				A9460A5D27D8F3B500A16186 /* ImageResponse.swift in Sources */,
+				A9C4587727DB24CC00E09C16 /* MainTabBarController.swift in Sources */,
 				A9460A3427D8B26000A16186 /* MainViewController.swift in Sources */,
-				A9C4587227DB21DB00E09C16 /* MapViewController.swift in Sources */,
 				A9460A5827D8C12800A16186 /* MainCollectionViewCell.swift in Sources */,
 				A9460A3027D8B26000A16186 /* AppDelegate.swift in Sources */,
 				A9460A3227D8B26000A16186 /* SceneDelegate.swift in Sources */,

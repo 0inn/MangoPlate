@@ -76,21 +76,6 @@
             </objects>
             <point key="canvasLocation" x="1176.8115942028987" y="77.678571428571431"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="rDj-r2-sGg">
-            <objects>
-                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dn6-sH-lUE" customClass="MapViewController" customModule="MangoPlate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gFn-Ce-eYk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="CU6-qY-rH6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wob-9Q-qAQ" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2114" y="78"/>
-        </scene>
         <!--맛집찾기-->
         <scene sceneID="9b4-PE-jqH">
             <objects>
@@ -174,25 +159,10 @@
             </objects>
             <point key="canvasLocation" x="-1900" y="1615"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="f2h-9o-BSC">
-            <objects>
-                <viewController id="sBW-vG-OpL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MLN-ND-JQ5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="1dL-sf-pEx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uXh-JU-Kem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1900" y="2328"/>
-        </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="3GK-Cu-ibd">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bQY-ap-MC1" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bQY-ap-MC1" customClass="MainTabBarController" customModule="MangoPlate" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WU9-O2-cpa">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
