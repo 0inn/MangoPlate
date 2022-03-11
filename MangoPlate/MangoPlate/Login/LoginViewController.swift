@@ -12,7 +12,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var kakaoBtn: UIButton!
     
     override func viewDidLoad() {
@@ -66,6 +66,13 @@ extension LoginViewController {
                     if let error = error {
                         print(error)
                     } else {
+                        // 유저정보 받아오기
+                        let name = user?.kakaoAccount?.profile?.nickname
+                        let profileImg = user?.kakaoAccount?.profile?.thumbnailImageUrl
+                        let userDefults = UserDefaults.standard
+                        userDefults.set(name, forKey: "name")
+                        userDefults.set(profileImg, forKey: "profileImg")
+                        userDefults.synchronize()
                         self.presentVC()
                     }
                 }
