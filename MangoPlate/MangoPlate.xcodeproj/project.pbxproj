@@ -23,9 +23,11 @@
 		A9460A5B27D8F3AA00A16186 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9460A5A27D8F3AA00A16186 /* ImageRequest.swift */; };
 		A9460A5D27D8F3B500A16186 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9460A5C27D8F3B500A16186 /* ImageResponse.swift */; };
 		A9C4586327DB0B5200E09C16 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4586227DB0B5200E09C16 /* LoginViewController.swift */; };
-		A9C4586E27DB1E0800E09C16 /* Pods_MangoPlate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38047A9C03A15B7186CA62F7 /* Pods_MangoPlate.framework */; };
 		A9C4587727DB24CC00E09C16 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4587627DB24CC00E09C16 /* MainTabBarController.swift */; };
 		A9C4587D27DB29E900E09C16 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4587C27DB29E900E09C16 /* MyPageViewController.swift */; };
+		A9C4588427DB4C8200E09C16 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4588327DB4C8200E09C16 /* MapViewController.swift */; };
+		A9C4588527DB4D4B00E09C16 /* Pods_MangoPlate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38047A9C03A15B7186CA62F7 /* Pods_MangoPlate.framework */; };
+		A9D26E4327DB794D00D93351 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D26E4227DB794D00D93351 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		A9C4586227DB0B5200E09C16 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9C4587627DB24CC00E09C16 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A9C4587C27DB29E900E09C16 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		A9C4588327DB4C8200E09C16 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A9D26E4227DB794D00D93351 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,7 @@
 			files = (
 				A9460A4527D8B27A00A16186 /* Alamofire in Frameworks */,
 				A9460A4B27D8B29300A16186 /* Then in Frameworks */,
-				A9C4586E27DB1E0800E09C16 /* Pods_MangoPlate.framework in Frameworks */,
+				A9C4588527DB4D4B00E09C16 /* Pods_MangoPlate.framework in Frameworks */,
 				A9460A4827D8B28700A16186 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +102,7 @@
 				A9460A2F27D8B26000A16186 /* AppDelegate.swift */,
 				A9460A3127D8B26000A16186 /* SceneDelegate.swift */,
 				A9460A3527D8B26000A16186 /* Main.storyboard */,
+				A9D26E4127DB793E00D93351 /* Service */,
 				A9460A5127D8B9F200A16186 /* API */,
 				A9C4586127DB0B3600E09C16 /* Login */,
 				A9460A5027D8B9DE00A16186 /* Main */,
@@ -143,6 +148,7 @@
 		A9C4587327DB21DF00E09C16 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				A9C4588327DB4C8200E09C16 /* MapViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -153,6 +159,14 @@
 				A9C4587C27DB29E900E09C16 /* MyPageViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		A9D26E4127DB793E00D93351 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A9D26E4227DB794D00D93351 /* LocationService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D8EAF14E6A275248E2DAD227 /* Pods */ = {
@@ -297,8 +311,10 @@
 				A9460A5827D8C12800A16186 /* MainCollectionViewCell.swift in Sources */,
 				A9460A3027D8B26000A16186 /* AppDelegate.swift in Sources */,
 				A9C4587D27DB29E900E09C16 /* MyPageViewController.swift in Sources */,
+				A9C4588427DB4C8200E09C16 /* MapViewController.swift in Sources */,
 				A9460A3227D8B26000A16186 /* SceneDelegate.swift in Sources */,
 				A9460A4F27D8B32C00A16186 /* StoreResponse.swift in Sources */,
+				A9D26E4327DB794D00D93351 /* LocationService.swift in Sources */,
 				A9460A5B27D8F3AA00A16186 /* ImageRequest.swift in Sources */,
 				A9460A4D27D8B32300A16186 /* StoreRequest.swift in Sources */,
 			);
@@ -330,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -363,6 +380,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -391,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -424,6 +443,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -435,6 +455,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -446,10 +467,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B112C1A842194A61613E6FF /* Pods-MangoPlate.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MangoPlate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FDAEFEDBC43C3B420EA70AE /* Pods-MangoPlate.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

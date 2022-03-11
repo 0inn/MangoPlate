@@ -7,21 +7,25 @@
 
 import UIKit
 
+import CoreLocation // 현재 위치 받기
 import SnapKit
 import Then
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
     
+    var locationManager = CLLocationManager()
+    
     var mainModel: [Document]?
+    var mainLocation: [[String]] = [[]] // 좌표 (x, y) -> 지도에 마커 찍기 위함
     var mainDic: [String: String] = [:] // 가게이름: 썸네일이미지
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        setLocation()
         setCollectionView()
-        getAPI()
     }
     
     // MARK: 네비게이션 바 설정
@@ -31,8 +35,15 @@ class MainViewController: UIViewController {
         let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacer.width = 15
         let mapBtn = makeBtn("map")
+        mapBtn.addTarget(self, action: #selector(presentVC), for: .touchUpInside)
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mapBtn), spacer,  UIBarButtonItem(customView: searchBtn)]
-        
+    }
+    
+    @objc func presentVC() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.mapLocation = self.mainLocation
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     private func makeBtn( _ name: String) -> UIButton {
@@ -42,6 +53,32 @@ class MainViewController: UIViewController {
         return btn
     }
     
+    // MARK: 현재 위치
+    private func setLocation() {
+        locationManager.delegate = self
+        // 배터리로 동작할 때 권장되는 가장 높은 수준의 정확도
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            print("📍위치 서비스 on 상태")
+            locationManager.startUpdatingLocation()
+            LocationService.shared.latitude = locationManager.location?.coordinate.latitude
+            LocationService.shared.latitude = locationManager.location?.coordinate.longitude
+            print("📍\(locationManager.location?.coordinate)")
+        } else {
+            print("📍위치 서비스 off 상태")
+        }
+        getAPI()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("📍위치 update")
+        if locations.first != nil {
+            LocationService.shared.latitude = locationManager.location?.coordinate.latitude
+            LocationService.shared.longtitude = locationManager.location?.coordinate.longitude
+        }
+    }
+    
     // MARK: 맛집 컬렉션 뷰
     private func setCollectionView() {
         collectionView.delegate = self
@@ -49,15 +86,19 @@ class MainViewController: UIViewController {
         collectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
     }
     
-    // 가게 정보 API 받아오기
+    // MARK: 가게 정보 API 받아오기
     private func getAPI() {
         StoreRequest.getStoreInfo { (mainModel) in
             self.mainModel = mainModel!
+            for i in 0 ... (mainModel!.count - 1) {
+                // cell쪽은 재사용되므로 호출받아온 시점에서 좌표 저장
+                self.mainLocation.append([mainModel?[i].y ?? "", mainModel?[i].x ?? ""])
+            }
             self.getImgAPI()
         }
     }
     
-    // 이미지 API 받아오기
+    // MARK: 이미지 API 받아오기
     private func getImgAPI() {
         for i in 0 ... (mainModel!.count - 1) {
             ImageRequest.getImgInfo(imgName: mainModel![i].place_name!) { (mainImgModel) in

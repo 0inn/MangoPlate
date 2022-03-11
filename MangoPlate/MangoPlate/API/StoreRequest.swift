@@ -13,6 +13,8 @@ class StoreRequest {
     // WHY? Alamofire는 비동기적으로 동작하기 때문
     static func getStoreInfo(completion: @escaping ([Document]?) -> Void) {
         
+        print("⭐️ \(LocationService.shared.latitude)")
+        
         var storeStorage: [Document]?
         
         let headers: HTTPHeaders = [
@@ -24,7 +26,9 @@ class StoreRequest {
         let parameters: [String: Any] = [
             "category_group_code": "FD6",
             "x": 126.8010862383141,
+                //LocationService.shared.latitude ?? 0.0,
             "y": 37.51189220888594,
+                //LocationService.shared.longtitude ?? 0.0,
             "radius": 20000
         ]
         
@@ -38,6 +42,7 @@ class StoreRequest {
                     
                 case .success(let response):
                     print("🍚 식당 API 호출")
+                    print("DEBUG>> \(response.documents!)")
                     storeStorage = response.documents
                     completion(storeStorage)
                     

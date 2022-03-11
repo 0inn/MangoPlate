@@ -76,6 +76,21 @@
             </objects>
             <point key="canvasLocation" x="1176.8115942028987" y="77.678571428571431"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="t7i-4a-AOU">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n1L-ci-T1M" customClass="MapViewController" customModule="MangoPlate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GKq-Ug-6eh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yEP-AA-Lm8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5B7-2l-f17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2086" y="78"/>
+        </scene>
         <!--맛집찾기-->
         <scene sceneID="9b4-PE-jqH">
             <objects>
@@ -123,7 +138,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-pL-WLf">
-                                <rect key="frame" x="103.5" y="418.5" width="207" height="59"/>
+                                <rect key="frame" x="45" y="418.5" width="324" height="59"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="KakaoImg"/>
                                 <connections>
@@ -269,7 +284,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="KakaoImg" width="183" height="45"/>
+        <image name="KakaoImg" width="300" height="45"/>
         <image name="LoginImg" width="828" height="1792"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
