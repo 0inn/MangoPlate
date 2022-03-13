@@ -64,7 +64,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             LocationService.shared.latitude = locationManager.location?.coordinate.latitude
             LocationService.shared.latitude = locationManager.location?.coordinate.longitude
-            print("📍\(locationManager.location?.coordinate)")
+            print("📍\(String(describing: locationManager.location?.coordinate))")
         } else {
             print("📍위치 서비스 off 상태")
         }

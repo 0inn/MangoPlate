@@ -42,7 +42,7 @@ class StoreRequest {
                     
                 case .success(let response):
                     print("🍚 식당 API 호출")
-                    print("DEBUG>> \(response.documents!)")
+                    //print("DEBUG>> \(response.documents!)")
                     storeStorage = response.documents
                     completion(storeStorage)
                     
